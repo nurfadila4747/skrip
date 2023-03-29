@@ -210,6 +210,13 @@
 							}
 						});
 					});
+
+					var r = $('#data-izin tfoot tr');
+					r.find('th').each(function(){
+						$(this).css('padding', 8);
+					});
+					$('#data-izin thead').append(r);
+					$('#search_0').css('text-align', 'center');
 			},
 
 			// script untuk membuat export data 
@@ -249,4 +256,10 @@
 		
 	});
 			
-</script>	
+</script>
+
+<!-- <style>
+    tfoot {
+    display: table-header-group;
+	}
+</style> -->
