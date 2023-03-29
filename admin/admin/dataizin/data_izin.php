@@ -42,12 +42,10 @@
               $no = 1;
 
 			  if ($_POST['cari_tahun'] ?? '') {
-				// var_dump('ada');
 				$sql = $koneksi->query("SELECT i.id_izin, s.id_umum, s.umum_id, s.pbphh, s.alamat, s.email, s.notelp, a.kota, i.keperluan, i.keterangan, i.tgl_out, i.tgl_in, berkas, status
 				from tb_umum s inner join tb_kawasan a on s.id_kawasan=a.id_kawasan 
 				inner join tb_rkt i on s.id_umum=i.id_umum WHERE YEAR(i.tgl_in) = " . $_POST['cari_tahun'] );
 			  }else{
-				//   var_dump('kosong');
 				$sql = $koneksi->query("SELECT i.id_izin, s.id_umum, s.umum_id, s.pbphh, s.alamat, s.email, s.notelp, a.kota, i.keperluan, i.keterangan, i.tgl_out, i.tgl_in, berkas, status
 				from tb_umum s inner join tb_kawasan a on s.id_kawasan=a.id_kawasan 
 				inner join tb_rkt i on s.id_umum=i.id_umum" );
