@@ -34,7 +34,7 @@
 				from tb_umum s inner join tb_kawasan a on s.id_kawasan=a.id_kawasan 
 				inner join tb_rkt i on s.id_umum=i.id_umum");
 			  
-			  
+			  var_dump($sql->fetch_assoc());
 			while ($data= $sql->fetch_assoc()) {
 				?>
 					<tr>
