@@ -47,7 +47,7 @@
 							</td>
 
 						<td>
-						    <a href="?page=reading&kode=<?php echo $data['id_berita']; ?>" title="File PDF"
+						    <a href="?page=prs-reading&kode=<?php echo $data['id_berita']; ?>" title="File PDF"
 								 class="btn btn-primary btn-sm">
 									<i class="fa fa-book"></i>
 								</a>

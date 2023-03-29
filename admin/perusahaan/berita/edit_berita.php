@@ -1,6 +1,5 @@
 <?php
 $tanggal = date("Y-m-d");
-
     if(isset($_GET['kode'])){
         $sql_cek = "SELECT * FROM tb_berita WHERE id_berita='".$_GET['kode']."'";
         $query_cek = mysqli_query($koneksi, $sql_cek);

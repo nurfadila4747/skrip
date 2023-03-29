@@ -7,7 +7,6 @@
 	<!-- /.card-header -->
 	<div class="card-body">
 		<div class="table-responsive">
-			<br>
 			<!-- <div class="row mb-3">
 				<div class="col-md-4">
 					<form action="" method="post">
@@ -115,7 +114,7 @@
 
 						<td>
 						    <a href="?page=reading&kode=<?php echo $data['id_izin']; ?>" title="File PDF"
-								 class="btn btn-primary btn-sm d-block my-1 my-1">
+								 class="btn btn-primary btn-sm d-block my-1">
 									<i class="fa fa-book"></i>
 								</a>
 
