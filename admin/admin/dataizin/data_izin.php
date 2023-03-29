@@ -1,13 +1,26 @@
 <div class="card card-info">
 	<div class="card-header">
 		<h3 class="card-title">
-			<i class="fa fa-table"></i> Perizinan Berusaha</h3>
+			<i class="fa fa-table"></i> Perizinan Berusaha
+		</h3>
 	</div>
 	<!-- /.card-header -->
 	<div class="card-body">
 		<div class="table-responsive">
 			<br>
+			<div class="row">
+				<div class="col-md-4">
+					<form action="" method="post">
+					<div class="input-group mb-3">
+						<input type="number" name="cari_tahun" placeholder="2023" min="2010" max="2099" step="1" class="form-control">
+						<button class="ml-2 btn btn-outline-secondary" type="submit" id="button-addon2">Cari Tahun</button>
+					</div>
+					</form>
+				</div>
+			</div>
+			
 			<table id="example1" class="table table-bordered table-striped">
+		
 				<thead>
 					<tr>
 						<th>No</th>
@@ -27,12 +40,22 @@
 
 					<?php
               $no = 1;
-			  $sql = $koneksi->query("SELECT i.id_izin, s.id_umum, s.umum_id, s.pbphh, s.alamat, s.email, s.notelp, a.kota, i.keperluan, i.keterangan, i.tgl_out, i.tgl_in, berkas, status
-			  from tb_umum s inner join tb_kawasan a on s.id_kawasan=a.id_kawasan 
-			  inner join tb_rkt i on s.id_umum=i.id_umum");
-              while ($data= $sql->fetch_assoc()) {
-            ?>
 
+			  if ($_POST['cari_tahun'] ?? '') {
+				// var_dump('ada');
+				$sql = $koneksi->query("SELECT i.id_izin, s.id_umum, s.umum_id, s.pbphh, s.alamat, s.email, s.notelp, a.kota, i.keperluan, i.keterangan, i.tgl_out, i.tgl_in, berkas, status
+				from tb_umum s inner join tb_kawasan a on s.id_kawasan=a.id_kawasan 
+				inner join tb_rkt i on s.id_umum=i.id_umum WHERE YEAR(i.tgl_in) = " . $_POST['cari_tahun'] );
+			  }else{
+				//   var_dump('kosong');
+				$sql = $koneksi->query("SELECT i.id_izin, s.id_umum, s.umum_id, s.pbphh, s.alamat, s.email, s.notelp, a.kota, i.keperluan, i.keterangan, i.tgl_out, i.tgl_in, berkas, status
+				from tb_umum s inner join tb_kawasan a on s.id_kawasan=a.id_kawasan 
+				inner join tb_rkt i on s.id_umum=i.id_umum" );
+			  }
+			  
+			  
+			while ($data= $sql->fetch_assoc()) {
+				?>
 					<tr>
 						<td>
 							<?php echo $no++; ?>

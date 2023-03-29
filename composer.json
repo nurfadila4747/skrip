@@ -1,0 +1,9 @@
+{
+    "name": "dila/skrip",
+    "autoload": {
+        "psr-4": {
+            "Dila\\Skrip\\": "src/"
+        }
+    },
+    "require": {}
+}
