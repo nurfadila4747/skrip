@@ -211,7 +211,7 @@
 			
 			// script untuk membuat export data 
             // dom: 'Bfrtip',
-            dom: 'lfBrtip',
+            dom: 'Bflrtip',
             buttons: [
                 {
 					extend: 'copy',
