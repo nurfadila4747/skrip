@@ -8,18 +8,20 @@
 	<div class="card-body">
 		<div class="table-responsive">
 			<br>
-			<div class="row">
+			<div class="row mb-3">
 				<div class="col-md-4">
 					<form action="" method="post">
-					<div class="input-group mb-3">
+					<div class="input-group">
 						<input type="number" name="cari_tahun" placeholder="2023" min="2010" max="2099" step="1" class="form-control">
-						<button class="ml-2 btn btn-outline-secondary" type="submit" id="button-addon2">Cari Tahun</button>
+						<button class="ml-2 btn btn-info" type="submit" id="button-addon2">Cari Tahun</button>
 					</div>
 					</form>
 				</div>
+				<button class="ml-2 btn btn-info d-inline" type="submit" id="button-addon2">Cari Tahun</button>
+				<button class="ml-2 btn btn-info d-inline " type="submit" id="button-addon2">Cari Tahun</button>
 			</div>
 			
-			<table id="example1" class="table table-bordered table-striped">
+			<table id="example" class="table table-bordered table-striped">
 		
 				<thead>
 					<tr>
@@ -153,3 +155,32 @@
 		</div>
 	</div>
 	<!-- /.card-body -->
+
+ <!-- jquery -->
+ <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <!-- jquery datatable -->
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+    
+        <!-- script tambahan  -->
+        <script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js">
+        </script>
+    
+        <!-- fungsi datatable -->
+        <script>
+            $(document).ready(function () {
+                $('#example').DataTable({
+                    // script untuk membuat export data 
+                    dom: 'Bfrtip',
+                    buttons: [
+						
+                        'copy', 'csv', 'excel', 'pdf', 'print'
+                    ]
+                })
+            });
+    
+</script>	
