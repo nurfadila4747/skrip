@@ -17,8 +17,6 @@
 					</div>
 					</form>
 				</div>
-				<button class="ml-2 btn btn-info d-inline" type="submit" id="button-addon2">Cari Tahun</button>
-				<button class="ml-2 btn btn-info d-inline " type="submit" id="button-addon2">Cari Tahun</button>
 			</div>
 			
 			<table id="example" class="table table-bordered table-striped">
@@ -177,10 +175,27 @@
                     // script untuk membuat export data 
                     dom: 'Bfrtip',
                     buttons: [
-						
-                        'copy', 'csv', 'excel', 'pdf', 'print'
+                        {
+							extend: 'copy',
+							className: 'btn btn-info mx-1'
+						},
+                        {
+							extend: 'csv',
+							className: 'btn btn-info mx-1'
+						},
+                        {
+							extend: 'excel',
+							className: 'btn btn-info mx-1'
+						},
+                        {
+							extend: 'pdf',
+							className: 'btn btn-info mx-1'
+						},
+                        {
+							extend: 'print',
+							className: 'btn btn-info mx-1'
+						},
                     ]
                 })
             });
-    
 </script>	
