@@ -7,17 +7,7 @@
 	<!-- /.card-header -->
 	<div class="card-body">
 		<div class="table-responsive">
-			<!-- <div class="row mb-3">
-				<div class="col-md-4">
-					<form action="" method="post">
-					<div class="input-group">
-						<input type="number" name="cari_tahun" placeholder="2023" min="2010" max="2099" step="1" class="form-control">
-						<button class="ml-2 btn btn-info" type="submit" id="button-addon2">Cari Tahun</button>
-					</div>
-					</form>
-				</div>
-			</div> -->
-			
+			<br>
 			<table id="data-izin" class="table table-bordered table-striped">
 		
 				<thead class="table-info">
@@ -42,9 +32,9 @@
 
 				$sql = $koneksi->query("SELECT i.id_izin, s.id_umum, s.umum_id, s.pbphh, s.alamat, s.email, s.notelp, a.kota, i.keperluan, i.keterangan, i.tgl_out, i.tgl_in, berkas, status
 				from tb_umum s inner join tb_kawasan a on s.id_kawasan=a.id_kawasan 
-				inner join tb_rkt i on s.id_umum=i.id_umum" );
+				inner join tb_rkt i on s.id_umum=i.id_umum");
 			  
-			  
+			//   var_dump($sql->fetch_assoc());
 			while ($data= $sql->fetch_assoc()) {
 				?>
 					<tr>
@@ -220,7 +210,8 @@
 			
 			
 			// script untuk membuat export data 
-            dom: 'Bfrtip',
+            // dom: 'Bfrtip',
+            dom: 'Bflrtip',
             buttons: [
                 {
 					extend: 'copy',
